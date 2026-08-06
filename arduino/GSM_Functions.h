@@ -6,7 +6,7 @@
 extern SoftwareSerial mySerial;
 
 
-const String PHONE_NUMBER = "+919591073131";
+const String PHONE_NUMBER = "+91XXXXXXXXXX";
 
 void updateSerial()
 {
