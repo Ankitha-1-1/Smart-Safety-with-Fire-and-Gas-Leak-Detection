@@ -19,7 +19,7 @@ const int GAS_THRESHOLD = 400;
 const float FIRE_THRESHOLD = 45.0;
 
 
-const char PHONE[] = "+919591073131";
+const char PHONE[] = "+91XXXXXXXXXX";
 
 bool gasAlertSent=false;
 bool fireAlertSent=false;
