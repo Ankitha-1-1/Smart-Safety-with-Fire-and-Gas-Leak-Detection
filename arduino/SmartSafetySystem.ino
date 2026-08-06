@@ -1,7 +1,4 @@
-/*
- Smart Safety with Fire and Gas Leak Detection
- Cleaned example based on original project.
-*/
+
 
 #include <LiquidCrystal.h>
 #include <SoftwareSerial.h>
@@ -21,8 +18,8 @@ const int BUZZER   = 10;
 const int GAS_THRESHOLD = 400;
 const float FIRE_THRESHOLD = 45.0;
 
-// Replace with your phone number
-const char PHONE[] = "+91XXXXXXXXXX";
+
+const char PHONE[] = "+919591073131";
 
 bool gasAlertSent=false;
 bool fireAlertSent=false;
