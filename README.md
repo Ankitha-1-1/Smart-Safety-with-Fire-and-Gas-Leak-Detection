@@ -70,8 +70,8 @@ The system consists of sensing, processing, display, and alert components.
                                     └───────────┘
 
                   ┌──────────────────┐
-                  │   MQ2 Sensor    │
-                  │ Gas / Smoke     │
+                  │   MQ2 Sensor     │
+                  │ Gas / Smoke      │
                   └────────┬─────────┘
                            │
                            ▼
