@@ -44,35 +44,40 @@ The main objectives of this project are:
 The system consists of sensing, processing, display, and alert components.
 
 ```text
-                  ┌──────────────────┐
-                  │    LM35 Sensor   │
-                  │ Temperature      │
-                  └────────┬─────────┘
-                           │
-                           ▼
-                    ┌──────────────┐
-                    │              │
-                    │  Arduino UNO │
-                    │              │
-                    └──────┬───────┘
-                           │
-             ┌─────────────┼─────────────┐
-             │             │             │
-             ▼             ▼             ▼
-       ┌──────────┐  ┌──────────┐  ┌────────────┐
-       │ 16×2 LCD │  │  Buzzer  │  │  SIM800L   │
-       │ Display  │  │  Alarm   │  │ GSM Module │
-       └──────────┘  └──────────┘  └──────┬─────┘
-                                          │
-                                          ▼
-                                    ┌───────────┐
-                                    │ SMS Alert │
-                                    └───────────┘
-
-                  ┌──────────────────┐
-                  │   MQ2 Sensor     │
-                  │ Gas / Smoke      │
-                  └────────┬─────────┘
-                           │
-                           ▼
-                     Arduino UNO
+                  
+                         ┌─────────────────────┐  
+                         │     POWER SUPPLY    │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+        ┌───────────────────────────────────────────────┐
+        │                 ARDUINO UNO                   │
+        │              MAIN CONTROLLER                  │
+        │                                               │
+        │  • Reads sensor values                        │
+        │  • Checks safety thresholds                   │
+        │  • Controls alarm and display                 │
+        │  • Triggers GSM notification                  │
+        └───────┬──────────────┬───────────────┬────────┘
+                │              │               │
+       Sensor Inputs           │          Alert / Output
+                │              │               │
+        ┌───────┴───────┐      │      ┌────────┴─────────┐
+        │               │      │      │                  │
+        ▼               ▼      ▼      ▼                  ▼
+ ┌─────────────┐ ┌─────────────┐ ┌──────────┐    ┌─────────────┐
+ │    LM35     │ │     MQ2     │ │ 16×2 LCD │    │   Buzzer    │
+ │ Temperature │ │ Gas / Smoke │ │ Display  │    │   Alarm     │
+ │   Sensor    │ │   Sensor    │ └──────────┘    └─────────────┘
+ └─────────────┘ └─────────────┘
+                                             
+                                      ┌─────────────────┐
+                                      │     SIM800L     │
+                                      │   GSM MODULE    │
+                                      └────────┬────────┘
+                                               │
+                                               ▼
+                                      ┌─────────────────┐
+                                      │    SMS ALERT    │
+                                      │   User's Phone  │
+                                      └─────────────────┘
